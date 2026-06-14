@@ -40,8 +40,17 @@ const projectCards = Array.from(document.querySelectorAll(".featured-project-car
 const projectPrev = document.getElementById("projectPrev");
 const projectNext = document.getElementById("projectNext");
 const projectDotsContainer = document.getElementById("projectDots");
+const projectCarousel = document.querySelector(".project-carousel");
 
 const autoAdvanceDelay = 5000;
+
+const swipeThreshold = 50;
+
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+let isSwiping = false;
 
 let currentProjectPage = 0;
 let autoAdvanceTimer = null;
@@ -152,6 +161,37 @@ function refreshCarouselForScreenSize() {
   showProjectPage(currentProjectPage);
 }
 
+function isMobileCarouselMode() {
+  return window.innerWidth <= 720;
+}
+
+function handleSwipeGesture() {
+  if (!isMobileCarouselMode()) return;
+
+  const horizontalDistance = touchEndX - touchStartX;
+  const verticalDistance = touchEndY - touchStartY;
+
+  const isHorizontalSwipe =
+    Math.abs(horizontalDistance) > Math.abs(verticalDistance);
+
+  const isLongEnoughSwipe =
+    Math.abs(horizontalDistance) >= swipeThreshold;
+
+  if (!isHorizontalSwipe || !isLongEnoughSwipe) {
+    return;
+  }
+
+  if (horizontalDistance < 0) {
+    // Swipe left: next project
+    goToNextProjectPage();
+  } else {
+    // Swipe right: previous project
+    goToPreviousProjectPage();
+  }
+
+  resetAutoAdvanceTimer();
+}
+
 if (projectCards.length) {
   buildProjectDots();
   showProjectPage(0);
@@ -172,7 +212,51 @@ if (projectPrev) {
   });
 }
 
+if (projectCarousel) {
+  projectCarousel.addEventListener(
+    "touchstart",
+    (event) => {
+      if (!isMobileCarouselMode()) return;
+
+      const touch = event.touches[0];
+
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      touchEndX = touch.clientX;
+      touchEndY = touch.clientY;
+      isSwiping = true;
+    },
+    { passive: true }
+  );
+
+  projectCarousel.addEventListener(
+    "touchmove",
+    (event) => {
+      if (!isMobileCarouselMode() || !isSwiping) return;
+
+      const touch = event.touches[0];
+
+      touchEndX = touch.clientX;
+      touchEndY = touch.clientY;
+    },
+    { passive: true }
+  );
+
+  projectCarousel.addEventListener("touchend", () => {
+    if (!isMobileCarouselMode() || !isSwiping) return;
+
+    handleSwipeGesture();
+
+    isSwiping = false;
+  });
+
+  projectCarousel.addEventListener("touchcancel", () => {
+    isSwiping = false;
+  });
+}
+
 window.addEventListener("resize", () => {
   refreshCarouselForScreenSize();
   resetAutoAdvanceTimer();
 });
+
