@@ -2,82 +2,336 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Test Website</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #111827, #312e81);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+  <title>Samtax | Game Developer</title>
 
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      max-width: 600px;
-    }
+  <meta
+    name="description"
+    content="Personal game development portfolio featuring finished games, game jam projects, devlogs, and in-progress prototypes."
+  />
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #93c5fd;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 10px;
-      background: #6366f1;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #4f46e5;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="card">
-    <h1>Hello, world!</h1>
-    <p>This is my first free website hosted with GitHub.</p>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🎮</span>
+        <span>Samtax.dev</span>
+      </a>
 
-    <button onclick="showMessage()">Click Me</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        ☰
+      </button>
 
-    <p id="message"></p>
-  </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#" class="placeholder-link">Projects</a></li>
+        <li><a href="#" class="placeholder-link">Updates</a></li>
+        <li><a href="#" class="placeholder-link">About</a></li>
+        <li><a href="#" class="placeholder-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <script>
-    function showMessage() {
-      document.getElementById("message").textContent =
-        "Your website is working!";
-    }
-  </script>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow">Indie Game Developer / Programmer / Game Jam Creator</p>
+
+        <h1>
+          Building games, prototypes, and strange little worlds.
+        </h1>
+
+        <p class="hero-description">
+          Welcome to my game dev hub. This site will collect my finished games,
+          game jam collaborations, development updates, and experimental projects.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#featured-projects" class="button primary-button">
+            View Featured Projects
+          </a>
+
+          <a href="#latest-updates" class="button secondary-button">
+            See Latest Updates
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>3+</strong>
+            <span>Projects</span>
+          </div>
+
+          <div>
+            <strong>2+</strong>
+            <span>Game Jams</span>
+          </div>
+
+          <div>
+            <strong>2026</strong>
+            <span>Site Started</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="mock-window">
+          <div class="window-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="game-preview">
+            <div class="pixel-character"></div>
+            <div class="platform platform-one"></div>
+            <div class="platform platform-two"></div>
+            <div class="platform platform-three"></div>
+            <div class="sparkle sparkle-one">✦</div>
+            <div class="sparkle sparkle-two">✧</div>
+          </div>
+        </div>
+
+        <p class="preview-caption">
+          Placeholder game preview area. Replace this later with a screenshot, GIF, or trailer.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section" id="featured-projects">
+      <div class="section-heading">
+        <p class="eyebrow">Portfolio</p>
+        <h2>Featured Projects</h2>
+        <p>
+          These are placeholder project cards for now. Later, each one can link to a full project page.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-image placeholder-image purple">
+            <span>Project Image</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="badge released">Released</span>
+              <span class="badge">Personal</span>
+            </div>
+
+            <h3>Project Title One</h3>
+
+            <p>
+              Short description for a finished personal game. Replace this with your actual project summary.
+            </p>
+
+            <ul class="project-tags">
+              <li>Godot</li>
+              <li>2D</li>
+              <li>Solo Dev</li>
+            </ul>
+
+            <a href="#" class="text-link placeholder-link">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image placeholder-image blue">
+            <span>Jam Game</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="badge jam">Game Jam</span>
+              <span class="badge">Collab</span>
+            </div>
+
+            <h3>Game Jam Project</h3>
+
+            <p>
+              Short description for a completed game jam collaboration. Add the jam theme, team size, and your role later.
+            </p>
+
+            <ul class="project-tags">
+              <li>48 Hours</li>
+              <li>Team Project</li>
+              <li>Web Build</li>
+            </ul>
+
+            <a href="#" class="text-link placeholder-link">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image placeholder-image green">
+            <span>Prototype</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="badge progress">In Progress</span>
+              <span class="badge">Prototype</span>
+            </div>
+
+            <h3>Experimental Prototype</h3>
+
+            <p>
+              Short description for a gameplay experiment, mechanic test, or early prototype.
+            </p>
+
+            <ul class="project-tags">
+              <li>Prototype</li>
+              <li>Systems</li>
+              <li>Experimental</li>
+            </ul>
+
+            <a href="#" class="text-link placeholder-link">View Project →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Latest Updates Section -->
+    <section class="section updates-section" id="latest-updates">
+      <div class="section-heading">
+        <p class="eyebrow">Devlog</p>
+        <h2>Latest Updates</h2>
+        <p>
+          This section is static for now. Later, it can pull from separate update files or a simple CMS.
+        </p>
+      </div>
+
+      <div class="updates-list">
+        <article class="update-card">
+          <div class="update-date">
+            <span class="month">Jun</span>
+            <span class="day">13</span>
+          </div>
+
+          <div>
+            <span class="badge">Website</span>
+            <h3>Website homepage started</h3>
+            <p>
+              Created the first version of the game dev website homepage with placeholder sections for projects and updates.
+            </p>
+          </div>
+        </article>
+
+        <article class="update-card">
+          <div class="update-date">
+            <span class="month">Soon</span>
+            <span class="day">01</span>
+          </div>
+
+          <div>
+            <span class="badge progress">Planned</span>
+            <h3>Projects page placeholder</h3>
+            <p>
+              A public projects page will be added later for completed personal games and game jam collaborations.
+            </p>
+          </div>
+        </article>
+
+        <article class="update-card">
+          <div class="update-date">
+            <span class="month">Soon</span>
+            <span class="day">02</span>
+          </div>
+
+          <div>
+            <span class="badge progress">Planned</span>
+            <h3>About and contact pages</h3>
+            <p>
+              About me and contact pages will be added after the main home page is finished.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Site Roadmap / Placeholder Section -->
+    <section class="section roadmap-section">
+      <div class="section-heading">
+        <p class="eyebrow">Coming Later</p>
+        <h2>Planned Site Pages</h2>
+        <p>
+          These are placeholders for future pages. You can build them one at a time.
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <h3>Projects Page</h3>
+          <p>
+            Public page for finished personal games and completed game jam collaborations.
+          </p>
+        </div>
+
+        <div class="roadmap-card">
+          <h3>Updates Page</h3>
+          <p>
+            A devlog-style page for project announcements, progress posts, and patch notes.
+          </p>
+        </div>
+
+        <div class="roadmap-card">
+          <h3>Secret Page</h3>
+          <p>
+            Private area for in-progress or personal projects. Password/key protection can be added later.
+          </p>
+        </div>
+
+        <div class="roadmap-card">
+          <h3>About Page</h3>
+          <p>
+            A page about you, your skills, your favorite tools, and what kind of games you make.
+          </p>
+        </div>
+
+        <div class="roadmap-card">
+          <h3>Contact Page</h3>
+          <p>
+            A simple page with email, social links, itch.io, GitHub, and optional contact form.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call To Action Section -->
+    <section class="section cta-section">
+      <div class="cta-box">
+        <p class="eyebrow">Next Step</p>
+        <h2>Ready to add your first real project?</h2>
+        <p>
+          Replace the placeholder cards with your actual game titles, screenshots, descriptions, and links.
+        </p>
+
+        <a href="#featured-projects" class="button primary-button">
+          Edit Featured Projects
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> Your Name. Built for my game development projects.
+    </p>
+
+    <div class="footer-links">
+      <a href="#" class="placeholder-link">GitHub</a>
+      <a href="#" class="placeholder-link">itch.io</a>
+      <a href="#" class="placeholder-link">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
