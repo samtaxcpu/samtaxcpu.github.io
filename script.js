@@ -7,8 +7,17 @@ if (year) {
 }
 
 if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
+  menuToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
     navLinks.classList.toggle("open");
+  });
+
+  navLinks.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+
+  document.addEventListener("click", () => {
+    navLinks.classList.remove("open");
   });
 }
 
