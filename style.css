@@ -700,7 +700,112 @@ h3 {
   }
 }
 
+.featured-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.carousel-button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 1.35rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.carousel-button:hover {
+  transform: translateY(-2px);
+  background: rgba(237, 104, 25, 0.16);
+  border-color: rgba(237, 104, 25, 0.48);
+}
+
+.carousel-button:active {
+  transform: translateY(0);
+}
+
+.project-carousel {
+  position: relative;
+}
+
+.featured-project-card {
+  animation: projectFadeIn 0.28s ease both;
+}
+
+.featured-project-card.is-hidden {
+  display: none;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(166, 140, 102, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition:
+    width 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.carousel-dot.active {
+  width: 28px;
+  background: #ed6819;
+  border-color: #ed6819;
+}
+
+@keyframes projectFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 720px) {
+
+  .featured-heading {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.carousel-controls {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.carousel-button {
+  width: 48px;
+  height: 48px;
+}
+
   .navbar {
     position: relative;
   }

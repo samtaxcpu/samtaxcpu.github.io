@@ -106,153 +106,196 @@
 
     <!-- Featured Projects Section -->
     <section class="section" id="featured-projects">
-      <div class="section-heading">
-        <p class="eyebrow">Portfolio</p>
-        <h2>Featured Projects</h2>
-        <p>
-          These are placeholder project cards for now. Later, each one can link to a full project page.
-        </p>
+      <div class="section-heading featured-heading">
+        <div>
+          <p class="eyebrow">Portfolio</p>
+          <h2>Featured Projects</h2>
+          <p>
+            These are placeholder project cards for now. Later, each one can link to a full project page.
+          </p>
+        </div>
+
+        <div class="carousel-controls" aria-label="Featured project controls">
+          <button class="carousel-button" id="projectPrev" aria-label="Show previous projects">
+            ←
+          </button>
+
+          <button class="carousel-button" id="projectNext" aria-label="Show next projects">
+            →
+          </button>
+        </div>
       </div>
 
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-image placeholder-image purple">
-            <span>Project Image</span>
-          </div>
-
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="badge released">Released</span>
-              <span class="badge">Personal</span>
+      <div class="project-carousel">
+        <div class="project-grid" id="projectGrid">
+          <article class="project-card featured-project-card">
+            <div class="project-image placeholder-image purple">
+              <span>Project Image</span>
             </div>
 
-            <h3>Project Title One</h3>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="badge released">Released</span>
+                <span class="badge">Personal</span>
+              </div>
 
-            <p>
-              Short description for a finished personal game. Replace this with your actual project summary.
-            </p>
+              <h3>Project Title One</h3>
 
-            <ul class="project-tags">
-              <li>Godot</li>
-              <li>2D</li>
-              <li>Solo Dev</li>
-            </ul>
+              <p>
+                Short description for a finished personal game. Replace this with your actual project summary.
+              </p>
 
-            <a href="#" class="text-link placeholder-link">View Project →</a>
-          </div>
-        </article>
+              <ul class="project-tags">
+                <li>Godot</li>
+                <li>2D</li>
+                <li>Solo Dev</li>
+              </ul>
 
-        <article class="project-card">
-          <div class="project-image placeholder-image blue">
-            <span>Jam Game</span>
-          </div>
+              <a href="#" class="text-link placeholder-link">View Project →</a>
+            </div>
+          </article>
 
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="badge jam">Game Jam</span>
-              <span class="badge">Collab</span>
+          <article class="project-card featured-project-card">
+            <div class="project-image placeholder-image blue">
+              <span>Jam Game</span>
             </div>
 
-            <h3>Game Jam Project</h3>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="badge jam">Game Jam</span>
+                <span class="badge">Collab</span>
+              </div>
 
-            <p>
-              Short description for a completed game jam collaboration. Add the jam theme, team size, and your role later.
-            </p>
+              <h3>Game Jam Project</h3>
 
-            <ul class="project-tags">
-              <li>48 Hours</li>
-              <li>Team Project</li>
-              <li>Web Build</li>
-            </ul>
+              <p>
+                Short description for a completed game jam collaboration. Add the jam theme, team size, and your role later.
+              </p>
 
-            <a href="#" class="text-link placeholder-link">View Project →</a>
-          </div>
-        </article>
+              <ul class="project-tags">
+                <li>48 Hours</li>
+                <li>Team Project</li>
+                <li>Web Build</li>
+              </ul>
 
-        <article class="project-card">
-          <div class="project-image placeholder-image green">
-            <span>Prototype</span>
-          </div>
+              <a href="#" class="text-link placeholder-link">View Project →</a>
+            </div>
+          </article>
 
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="badge progress">In Progress</span>
-              <span class="badge">Prototype</span>
+          <article class="project-card featured-project-card">
+            <div class="project-image placeholder-image green">
+              <span>Prototype</span>
             </div>
 
-            <h3>Experimental Prototype</h3>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="badge progress">In Progress</span>
+                <span class="badge">Prototype</span>
+              </div>
 
-            <p>
-              Short description for a gameplay experiment, mechanic test, or early prototype.
-            </p>
+              <h3>Experimental Prototype</h3>
 
-            <ul class="project-tags">
-              <li>Prototype</li>
-              <li>Systems</li>
-              <li>Experimental</li>
-            </ul>
+              <p>
+                Short description for a gameplay experiment, mechanic test, or early prototype.
+              </p>
 
-            <a href="#" class="text-link placeholder-link">View Project →</a>
-          </div>
-        </article>
+              <ul class="project-tags">
+                <li>Prototype</li>
+                <li>Systems</li>
+                <li>Experimental</li>
+              </ul>
+
+              <a href="#" class="text-link placeholder-link">View Project →</a>
+            </div>
+          </article>
+
+          <!-- Hidden placeholder projects that become visible through carousel scrolling -->
+          <article class="project-card featured-project-card">
+            <div class="project-image placeholder-image orange">
+              <span>RPG Test</span>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="badge progress">In Progress</span>
+                <span class="badge">Personal</span>
+              </div>
+
+              <h3>RPG Combat Test</h3>
+
+              <p>
+                Placeholder for a turn-based or action RPG combat experiment with enemies, stats, and abilities.
+              </p>
+
+              <ul class="project-tags">
+                <li>Combat</li>
+                <li>RPG</li>
+                <li>Prototype</li>
+              </ul>
+
+              <a href="#" class="text-link placeholder-link">View Project →</a>
+            </div>
+          </article>
+
+          <article class="project-card featured-project-card">
+            <div class="project-image placeholder-image tan">
+              <span>Puzzle Game</span>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="badge released">Released</span>
+                <span class="badge">Small Game</span>
+              </div>
+
+              <h3>Puzzle Prototype</h3>
+
+              <p>
+                Placeholder for a finished puzzle game or small mechanic-focused project.
+              </p>
+
+              <ul class="project-tags">
+                <li>Puzzle</li>
+                <li>Web Game</li>
+                <li>Minimal</li>
+              </ul>
+
+              <a href="#" class="text-link placeholder-link">View Project →</a>
+            </div>
+          </article>
+
+          <article class="project-card featured-project-card">
+            <div class="project-image placeholder-image red">
+              <span>Boss Fight</span>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="badge jam">Game Jam</span>
+                <span class="badge">Action</span>
+              </div>
+
+              <h3>Boss Fight Jam</h3>
+
+              <p>
+                Placeholder for a game jam project focused on combat, boss patterns, and fast iteration.
+              </p>
+
+              <ul class="project-tags">
+                <li>Boss Fight</li>
+                <li>Game Jam</li>
+                <li>Action</li>
+              </ul>
+
+              <a href="#" class="text-link placeholder-link">View Project →</a>
+            </div>
+          </article>
+        </div>
       </div>
-    </section>
 
-    <!-- Latest Updates Section -->
-    <section class="section updates-section" id="latest-updates">
-      <div class="section-heading">
-        <p class="eyebrow">Devlog</p>
-        <h2>Latest Updates</h2>
-        <p>
-          This section is static for now. Later, it can pull from separate update files or a simple CMS.
-        </p>
-      </div>
-
-      <div class="updates-list">
-        <article class="update-card">
-          <div class="update-date">
-            <span class="month">Jun</span>
-            <span class="day">13</span>
-          </div>
-
-          <div>
-            <span class="badge">Website</span>
-            <h3>Website homepage started</h3>
-            <p>
-              Created the first version of the game dev website homepage with placeholder sections for projects and updates.
-            </p>
-          </div>
-        </article>
-
-        <article class="update-card">
-          <div class="update-date">
-            <span class="month">Soon</span>
-            <span class="day">01</span>
-          </div>
-
-          <div>
-            <span class="badge progress">Planned</span>
-            <h3>Projects page placeholder</h3>
-            <p>
-              A public projects page will be added later for completed personal games and game jam collaborations.
-            </p>
-          </div>
-        </article>
-
-        <article class="update-card">
-          <div class="update-date">
-            <span class="month">Soon</span>
-            <span class="day">02</span>
-          </div>
-
-          <div>
-            <span class="badge progress">Planned</span>
-            <h3>About and contact pages</h3>
-            <p>
-              About me and contact pages will be added after the main home page is finished.
-            </p>
-          </div>
-        </article>
+      <div class="carousel-dots" id="projectDots" aria-label="Featured project pages">
+        <button class="carousel-dot active" aria-label="Show project page 1"></button>
+        <button class="carousel-dot" aria-label="Show project page 2"></button>
       </div>
     </section>
 
