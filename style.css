@@ -725,21 +725,33 @@ h3 {
 }
 
 .featured-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
+  max-width: 720px;
+  margin-bottom: 34px;
 }
 
-.carousel-controls {
+.project-carousel {
+  position: relative;
+}
+
+.featured-project-card {
+  animation: projectFadeIn 0.28s ease both;
+}
+
+.featured-project-card.is-hidden {
+  display: none;
+}
+
+.carousel-bottom-controls {
   display: flex;
-  gap: 10px;
-  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
 }
 
 .carousel-button {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
@@ -763,28 +775,18 @@ h3 {
   transform: translateY(0);
 }
 
-.project-carousel {
-  position: relative;
-}
-
-.featured-project-card {
-  animation: projectFadeIn 0.28s ease both;
-}
-
-.featured-project-card.is-hidden {
-  display: none;
-}
-
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 24px;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
 }
 
 .carousel-dot {
   width: 10px;
   height: 10px;
+  padding: 0;
   border: 1px solid rgba(166, 140, 102, 0.5);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
@@ -820,14 +822,27 @@ h3 {
   flex-direction: column;
 }
 
-.carousel-controls {
-  width: 100%;
-  justify-content: space-between;
+.carousel-bottom-controls {
+  gap: 14px;
+  margin-top: 24px;
 }
 
 .carousel-button {
   width: 48px;
   height: 48px;
+}
+
+.carousel-dots {
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+}
+
+.carousel-dot.active {
+  width: 24px;
 }
 
   .navbar {

@@ -107,23 +107,11 @@
     <!-- Featured Projects Section -->
     <section class="section" id="featured-projects">
       <div class="section-heading featured-heading">
-        <div>
-          <p class="eyebrow">Portfolio</p>
-          <h2>Featured Projects</h2>
-          <p>
-            These are placeholder project cards for now. Later, each one can link to a full project page.
-          </p>
-        </div>
-
-        <div class="carousel-controls" aria-label="Featured project controls">
-          <button class="carousel-button" id="projectPrev" aria-label="Show previous projects">
-            ←
-          </button>
-
-          <button class="carousel-button" id="projectNext" aria-label="Show next projects">
-            →
-          </button>
-        </div>
+        <p class="eyebrow">Portfolio</p>
+        <h2>Featured Projects</h2>
+        <p>
+          These are placeholder project cards for now. Later, each one can link to a full project page.
+        </p>
       </div>
 
       <div class="project-carousel">
@@ -209,7 +197,6 @@
             </div>
           </article>
 
-          <!-- Hidden placeholder projects that become visible through carousel scrolling -->
           <article class="project-card featured-project-card">
             <div class="project-image placeholder-image orange">
               <span>RPG Test</span>
@@ -293,9 +280,17 @@
         </div>
       </div>
 
-      <div class="carousel-dots" id="projectDots" aria-label="Featured project pages">
-        <button class="carousel-dot active" aria-label="Show project page 1"></button>
-        <button class="carousel-dot" aria-label="Show project page 2"></button>
+      <!-- Carousel controls now live below the projects -->
+      <div class="carousel-bottom-controls">
+        <button class="carousel-button" id="projectPrev" aria-label="Show previous projects">
+          ←
+        </button>
+
+        <div class="carousel-dots" id="projectDots" aria-label="Featured project pages"></div>
+
+        <button class="carousel-button" id="projectNext" aria-label="Show next projects">
+          →
+        </button>
       </div>
     </section>
 

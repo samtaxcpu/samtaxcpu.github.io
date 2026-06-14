@@ -30,15 +30,56 @@ placeholderLinks.forEach((link) => {
 const projectCards = Array.from(document.querySelectorAll(".featured-project-card"));
 const projectPrev = document.getElementById("projectPrev");
 const projectNext = document.getElementById("projectNext");
-const projectDots = Array.from(document.querySelectorAll("#projectDots .carousel-dot"));
+const projectDotsContainer = document.getElementById("projectDots");
 
-const projectsPerPage = 3;
 const autoAdvanceDelay = 5000;
 
 let currentProjectPage = 0;
 let autoAdvanceTimer = null;
+let projectsPerPage = getProjectsPerPage();
+let totalProjectPages = getTotalProjectPages();
 
-const totalProjectPages = Math.ceil(projectCards.length / projectsPerPage);
+function getProjectsPerPage() {
+  if (window.innerWidth <= 720) {
+    return 1;
+  }
+
+  return 3;
+}
+
+function getTotalProjectPages() {
+  return Math.ceil(projectCards.length / projectsPerPage);
+}
+
+function buildProjectDots() {
+  if (!projectDotsContainer) return;
+
+  projectDotsContainer.innerHTML = "";
+
+  for (let i = 0; i < totalProjectPages; i++) {
+    const dot = document.createElement("button");
+
+    dot.classList.add("carousel-dot");
+    dot.setAttribute("aria-label", `Show project page ${i + 1}`);
+
+    dot.addEventListener("click", () => {
+      showProjectPage(i);
+      resetAutoAdvanceTimer();
+    });
+
+    projectDotsContainer.appendChild(dot);
+  }
+}
+
+function updateProjectDots() {
+  if (!projectDotsContainer) return;
+
+  const dots = Array.from(projectDotsContainer.querySelectorAll(".carousel-dot"));
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentProjectPage);
+  });
+}
 
 function showProjectPage(pageIndex) {
   if (!projectCards.length) return;
@@ -64,9 +105,7 @@ function showProjectPage(pageIndex) {
     }
   });
 
-  projectDots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentProjectPage);
-  });
+  updateProjectDots();
 }
 
 function goToNextProjectPage() {
@@ -88,7 +127,24 @@ function resetAutoAdvanceTimer() {
   }, autoAdvanceDelay);
 }
 
+function refreshCarouselForScreenSize() {
+  const firstVisibleProjectIndex = currentProjectPage * projectsPerPage;
+
+  projectsPerPage = getProjectsPerPage();
+  totalProjectPages = getTotalProjectPages();
+
+  currentProjectPage = Math.floor(firstVisibleProjectIndex / projectsPerPage);
+
+  if (currentProjectPage >= totalProjectPages) {
+    currentProjectPage = 0;
+  }
+
+  buildProjectDots();
+  showProjectPage(currentProjectPage);
+}
+
 if (projectCards.length) {
+  buildProjectDots();
   showProjectPage(0);
   resetAutoAdvanceTimer();
 }
@@ -107,9 +163,7 @@ if (projectPrev) {
   });
 }
 
-projectDots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    showProjectPage(index);
-    resetAutoAdvanceTimer();
-  });
+window.addEventListener("resize", () => {
+  refreshCarouselForScreenSize();
+  resetAutoAdvanceTimer();
 });
